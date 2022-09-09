@@ -17,3 +17,11 @@ function sh(id,sh,table)
 		location.reload();
 	})
 }
+
+function get_mid(){
+	$('#mid').load('./api/get_mid.php',{big:$('#big').val()});
+}
+
+function get_big(){
+	$('#bigtype').load('./api/get_big.php');
+}
