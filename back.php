@@ -1,3 +1,8 @@
+<?php
+$do = ($_GET['do'])??'admin';
+include('./api/base.php');
+?>
+
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0057)?do=admin -->
@@ -19,7 +24,7 @@
             <a href="./index.php">
                 <img src="./icon/0416.jpg">
             </a>
-            <img src="./Manage Page_files/0417.jpg">
+            <img src="./icon/0417.jpg">
         </div>
         <div id="left" class="ct">
             <div style="min-height:400px;">
@@ -33,9 +38,19 @@
             </div>
         </div>
         <div id="right">
+        <?php
+            if(file_exists('./back/'.$do.'.php')){
+                include('./back/'.$do.'.php');
+            }else{
+                include('./back/admin.php');
+            }
+            ?>
         </div>
+
+
         <div id="bottom" style="line-height:70px; color:#FFF; background:url(icon/bot.png);" class="ct">
-            頁尾版權 : </div>
+        <?=$Bot->find(1)['text']?>
+        </div>
     </div>
 
 </body>
