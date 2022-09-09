@@ -1,5 +1,6 @@
 <?php
 include('./base.php');
-$DB = new DB($_POST['table']);
-$DB->save($_POST);
+$_POST['pr'] = serialize($_POST['pr']);
+$Admin->save($_POST);
+to('../back.php')
 ?>

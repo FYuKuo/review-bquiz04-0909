@@ -28,12 +28,13 @@ $_SESSION['code'] = $num1+$num2;
         let pw = $('#pw').val();
         let anser = $('#anser').val();
         let code = <?=$_SESSION['code'];?>;
-        let table = 'mem';
+        let table = 'admin';
 
         if(anser == code){
             $.get('./api/login.php',{acc,pw,table},(res)=>{
+                // console.log(res);
                 if(parseInt(res) == 1){
-                    location.href='?do=buycart';
+                    location.href='./back.php';
                 }else{
                 alert('帳號或密碼錯誤');
                 }
