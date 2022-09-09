@@ -90,13 +90,13 @@ class DB
                 }
             }
 
-            $sql = "UPDATE `bot` SET " . join(',',$tmp) . " WHERE `id` = '{$array['id']}' ";
+            $sql = "UPDATE `$this->table` SET " . join(',',$tmp) . " WHERE `id` = '{$array['id']}' ";
         }else{
 
             $col = join("`,`",array_keys($array));
             $val = join("','",$array);
 
-            $sql = "INSERT INTO `bot` (`$col`) VALUES ('$val')";
+            $sql = "INSERT INTO `$this->table` (`$col`) VALUES ('$val')";
         }
         return $this->pdo->exec($sql);
     }

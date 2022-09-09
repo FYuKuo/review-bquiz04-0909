@@ -31,7 +31,7 @@ include('./api/base.php');
                 <?php
                 if(isset($_SESSION['mem'])){
                 ?>
-                <a href="./api/login.php?table=admin">登出</a>
+                <a href="./api/logout.php?table=mem">登出</a>
                 <?php
                 }else{
                 ?>
